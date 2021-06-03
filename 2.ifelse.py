@@ -29,18 +29,18 @@ var_1 = True
 var_2 = True
 
 # оператор "не" (NOT, инверция)
-result = not var_1
+#result = not var_1
 
 #оператор "и" (AND)
 #возвращает True только тогда, когда обе переменных
 #являются True
-result = var_1 and var_2
+#result = var_1 and var_2
 
 
 #оператор "или" (OR)
 #возвращает False только тогда, когда обе переменных
 #являются False
-result = var_1 or var_2
+#result = var_1 or var_2
 
 #print(result)
 
@@ -52,24 +52,41 @@ result = var_1 or var_2
     #w = 'hello'
     #print(w)
 
-z = 10
+#z = 10
 
-if z < 3:  #оператор "если"
-    print('меньше')
-else:  #оператор "иначе" 
-    print('не меньше')
+#if z < 3:  #оператор "если"
+    #print('меньше')
+#else:  #оператор "иначе" 
+    #print('не меньше')
 
-v = 'A'
+#v = 'A'
 
-if v == 'B':
-    res = 'literal B'
-elif v == 'A':
-    res = 'literal A'
-elif v == 'D':
-    res = 'literal D'
-elif v == 'W':
-    res = 'literal W'
+#if v == 'B':
+    #res = 'literal B'
+#elif v == 'A':
+    #res = 'literal A'
+#elif v == 'D':
+    #res = 'literal D'
+#elif v == 'W':
+    #res = 'literal W'
+#else:
+    #res = 'не понятный мне символ :('
+
+#print(res)
+
+#Приимер "Термостат"\
+curreent_temp = 25
+
+min_temp = 10
+max_temp = 25
+
+# параметер "люди есть/нет"
+h = True
+
+#логика термостата
+if curreent_temp < min_temp and not h:
+    print(f'вклбчен нагрев до {min_temp}')
+elif curreent_temp < max_temp and h:
+    print("включен нагрев до {min_tepm}")
 else:
-    res = 'не понятный мне символ :('
-
-print(res)
+    print("нагрев выключен")
