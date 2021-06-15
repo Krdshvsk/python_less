@@ -44,3 +44,4 @@ my_list = [10,20,30,40,50]
 num_lst = [num * 2 for num in range(10, 100, 10)]
 
 print(num_lst)
+git
