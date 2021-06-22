@@ -59,7 +59,7 @@ a, b, c = func_5(28,14)
 
 # Пример 1. лямбда внутри генератора списка 
 my_list = [(lambda arg_1: arg_1.upper())(i) for i in "hello"]
-print(my_list)
+# print(my_list)
 
 # пример 2. словарь лямбда-выражений
 my_lambdas = {
@@ -67,5 +67,37 @@ my_lambdas = {
     "+": lambda w, z: w + z
 }
 
-print(my_lambdas['+'](5, 2))
-print(my_lambdas['*'](5, 2))
+# print(my_lambdas['+'](5, 2))
+# print(my_lambdas['*'](5, 2))
+
+
+# *** декоратор ***
+
+# декоратор это функция, которя обертвующая другую функцию 
+# для того, чтобы придать таргетные фу-ции (доп.функционал)
+
+# декоратор 
+def my_decorator(func_object):
+    # функия обертка
+    def wrapper(w):
+        # доп функциональность ДО ВЫЗОВА 
+        print('Before')
+        w = w + 2
+        # вызов целевой функции
+        func_object(w)
+        # доп функциональность ПОСЛЕ
+        print("After")
+    # возврат объекта функции-обертки
+    return wrapper
+# новый способ применения декоратора 
+@my_decorator
+# целевая функция (таргтная)
+def target_func(arg_1):
+    print("hello! i am target func :)", arg_1)
+
+# старый способ применения декоратора 
+# target_func = my_decorator(target_func) 
+
+
+target_func(10)
+
